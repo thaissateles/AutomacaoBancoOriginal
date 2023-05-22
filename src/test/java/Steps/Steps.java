@@ -16,16 +16,18 @@ public class Steps {
 	public void que_o_usuario_acesse_a_url(String url) throws Throwable {
 	  m.executarNavegador(url, "Abrindo navegador"); 
 	}
-
+	
 	@Given("^selecione o botao abrir nova conta$")
 	public void selecione_o_botao_abrir_nova_conta() throws Throwable {
-	   m.pausa(5000, "pausa para carregar o botao abrir conta");
-		m.click(e.getBtnAbrirConta(), "Selecionando botao abrir conta");
+		m.click(e.getBtnCookies(), "selecionar botao ok");
+		m.pausa(3000, "pausa para carregar o botao abrir conta");
+		m.click(e.getBtnAbrirConta(), "Selecionar botao abrir conta");
 	}
 
 	@Given("^selecionar o botao abrir conta para voce$")
 	public void selecionar_o_botao_abrir_conta_para_voce() throws Throwable {
-	   m.click(e.getBtnParaVoce(), "selecionando botao abrir conta");
+	   m.pausa(5000, "pausa para carregar o botao abrir conta para voce");
+	   m.click(e.getBtnParaVoce(), "selecionando botao abrir conta para voce");
 	}
 
 	@When("^o usuario preencher o formulario$")
@@ -47,7 +49,13 @@ public class Steps {
 	   
 	}
 
-
+	@When("^preencher o campo nome \"([^\"]*)\"$")
+	public void preencher_o_campo_nome(String nome) throws Throwable {
+     m.preencher(e.getCampoNome(),nome, "Preenchendo o campo nome");
+     m.preencher(e.getCampoTelefone(), "111111111111", "Preenchendo o campo telefone"); 
+	 m.preencher(e.getCampoEmail(), "teste@teste.com.br", "Preenchendo campo email"); 
+	 m.preencher(e.getCampoCpf(), "65518687036", "Preenchendo o campo cpf");
+	}
 	
 	
 	

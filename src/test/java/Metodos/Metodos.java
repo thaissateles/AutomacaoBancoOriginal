@@ -48,6 +48,7 @@ public class Metodos {
 			screnShoot(descricaoPasso);
 		}
 	}
+	
 
 	public void click(By elemento, String descricaoPasso) throws IOException {
 		try {

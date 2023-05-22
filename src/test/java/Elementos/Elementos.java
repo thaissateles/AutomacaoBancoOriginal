@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 public class Elementos {
 
 	private By btnAbrirConta = By.cssSelector(
-			"body > div.viewport-primary > nav.nav-desktop > div.right > div.nav-item.nav-item-nova-conta.open > a");
+			"body > div.viewport-primary > nav.nav-desktop > div.right > div.nav-item.nav-item-nova-conta > a");
+	private By btnCookies = By.id("onetrust-accept-btn-handler");
 	private By btnParaVoce = By.id("bt1");
 	private By campoNome = By.id("nome");
 	private By campoTelefone = By.id("telefone");
@@ -16,6 +17,10 @@ public class Elementos {
 
 	public By getBtnAbrirConta() {
 		return btnAbrirConta;
+	}
+	
+	public By getBtnCookies() {
+		return btnCookies;
 	}
 
 	public By getBtnParaVoce() {
